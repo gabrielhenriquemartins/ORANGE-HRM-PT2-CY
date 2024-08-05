@@ -23,6 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import 'cypress-file-upload'
+
 Cypress.Commands.add('getRandomString', (length) => {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
@@ -77,6 +79,52 @@ Cypress.Commands.add('adminPage', () => {
     cy.visit('/admin/viewSystemUsers')
 })
 
+Cypress.Commands.add('pimPage', () => {
+    cy.visit('/pim/viewEmployeeList')
+})
+
+Cypress.Commands.add('leavePage', () => {
+    cy.visit('/leave/viewLeaveList')
+})
+
+Cypress.Commands.add('recruitmentPage', () => {
+    cy.visit('/recruitment/viewCandidates')
+})
+
+Cypress.Commands.add('performancePage', () => {
+    cy.visit('/performance/searchEvaluatePerformanceReview')
+})
+
+Cypress.Commands.add('dashboardPage', () => {
+    cy.visit('/dashboard/index')
+})
+
+Cypress.Commands.add('directoryPage', () => {
+    cy.visit('/directory/viewDirectory')
+})
+
+Cypress.Commands.add('maintenancePage', () => {
+    cy.visit('/maintenance/purgeEmployee')
+})
+
+Cypress.Commands.add('claimPage', () => {
+    cy.visit('/claim/viewAssignClaim')
+})
+
+Cypress.Commands.add('buzzPage', () => {
+    cy.visit('/buzz/viewBuzz')
+})
+
+Cypress.Commands.add('timePage', () => {
+    cy.visit('/time/viewEmployeeTimesheet')
+})
+
+Cypress.Commands.add('selectInDropbox', (name, index = 0) => {
+    cy.get('.oxd-select-text-input').contains('-- Select --').eq(index).click()
+    cy.get('[role="option"]').contains(name).click()
+    cy.get('.oxd-select-text-input').should('contain', name)
+})
+
 Cypress.Commands.add('openLeftMenu', (menu) => {
     cy.get('aside .oxd-main-menu-item').contains(menu).click()
 })
@@ -91,7 +139,14 @@ Cypress.Commands.add('selectSubMenu', (subMenu, subMenu2 = null) => {
 
 Cypress.Commands.add('checkPopUpAndClose', (message) => {
     cy.get('.oxd-toast').then(toastMessage => {
-        cy.wrap(toastMessage).find('.oxd-text').contains(message)
+        cy.wrap(toastMessage).find('.oxd-text').should('contain', message)
         cy.wrap(toastMessage).find('.oxd-text').contains(message).parents('.oxd-toast').find('.oxd-toast-close').click()
+    })
+})
+
+Cypress.Commands.add('typeIntoTextField', (fieldName, value, index = 0) => {
+    cy.get('.oxd-label').contains(fieldName).then(inputName => {
+        cy.wrap(inputName).parents('.oxd-input-group').find('input').eq(index).clear().type(value)
+        cy.wrap(inputName).parents('.oxd-input-group').find('input').eq(index).invoke('prop', 'value').should('contain', value)
     })
 })

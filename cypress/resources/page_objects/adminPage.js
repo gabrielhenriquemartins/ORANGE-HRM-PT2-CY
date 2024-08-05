@@ -2,13 +2,6 @@
 
 let randomAcronym = null;
 
-function typeIntoTextField(fieldName, value) {
-    cy.get('.oxd-label').contains(fieldName).then(inputName => {
-        cy.wrap(inputName).parents('.oxd-input-group').find('input').clear().type(value)
-        cy.wrap(inputName).parents('.oxd-input-group').find('input').invoke('prop', 'value').should('contain', value)
-    })
-}
-
 export class AdminPage {
 
     addJobTitle(jobTitle, description, note) {
@@ -37,21 +30,19 @@ export class AdminPage {
         cy.openLeftMenu('Admin')
         cy.selectSubMenu('Organization', 'Locations')
         cy.get('button').contains(' Add ').click()
-        typeIntoTextField('Name', name)
-        typeIntoTextField('City', city)
-        typeIntoTextField('State/Province', state)
+        cy.typeIntoTextField('Name', name)
+        cy.typeIntoTextField('City', city)
+        cy.typeIntoTextField('State/Province', state)
         if (zip_code) {
-            typeIntoTextField('Zip/Postal Code', zip_code)
+            cy.typeIntoTextField('Zip/Postal Code', zip_code)
         }
         if (phone) {
-            typeIntoTextField('Phone', phone)
+            cy.typeIntoTextField('Phone', phone)
         }
         if (fax) {
-            typeIntoTextField('Fax', fax)
+            cy.typeIntoTextField('Fax', fax)
         }
-        cy.get('.oxd-select-text-input').contains('-- Select --').click()
-        cy.get('[role="option"]').contains(country).click()
-        cy.get('.oxd-select-text-input').should('contain', country)
+        cy.selectInDropbox(country)
         cy.get('button[type="submit"]').click()
     }
 
@@ -68,7 +59,7 @@ export class AdminPage {
         cy.openLeftMenu('Admin')
         cy.selectSubMenu('Qualifications', 'Languages')
         cy.get('button').contains(' Add ').click()
-        typeIntoTextField('Name', language)
+        cy.typeIntoTextField('Name', language)
         cy.get('button[type="submit"]').click()
     }
 
@@ -85,7 +76,7 @@ export class AdminPage {
         cy.openLeftMenu('Admin')
         cy.selectSubMenu('Qualifications', 'Memberships')
         cy.get('button').contains(' Add ').click()
-        typeIntoTextField('Name', membership)
+        cy.typeIntoTextField('Name', membership)
         cy.get('button[type="submit"]').click()
     }
 
@@ -104,7 +95,7 @@ export class AdminPage {
         cy.get('button').contains(' Add ').click()
         cy.getRandomString(6).then((randomString) => {
             cy.log('Random Nationality: ', randomString)
-            typeIntoTextField('Name', nationality + " - " + randomString)
+            cy.typeIntoTextField('Name', nationality + " - " + randomString)
             randomAcronym = " - " + randomString
         })
         cy.get('button[type="submit"]').click()
@@ -113,19 +104,25 @@ export class AdminPage {
     deleteNationality(nationality) {
         cy.openLeftMenu('Admin')
         cy.selectSubMenu('Nationalities')
-        cy.get('.oxd-table-card').contains(nationality + randomAcronym).then(tableRow => {
-            cy.wrap(tableRow).parents('[role="row"]').find('.bi-trash').click()
-        })
+        if (randomAcronym) {
+            cy.get('.oxd-table-card').contains(nationality + randomAcronym).then(tableRow => {
+                cy.wrap(tableRow).parents('[role="row"]').find('.bi-trash').click()
+            })
+        } else {
+            cy.get('.oxd-table-card').contains(nationality).then(tableRow => {
+                cy.wrap(tableRow).parents('[role="row"]').find('.bi-trash').click()
+            })
+        }
         cy.get('button').contains(' Yes, Delete ').click()
     }
 
     sendEmailConfiguration(emailSender, emailDestination) {
         cy.openLeftMenu('Admin')
         cy.selectSubMenu('Configuration', 'Email Configuration')
-        typeIntoTextField('Mail Sent As', emailSender)
+        cy.typeIntoTextField('Mail Sent As', emailSender)
         cy.get('[type="radio"][value="sendmail"]').click({ force: true })
         cy.get('.oxd-switch-input').click()
-        typeIntoTextField('Test Email Address', emailDestination)
+        cy.typeIntoTextField('Test Email Address', emailDestination)
         cy.get('button[type="submit"]').click()
     }
 
@@ -133,10 +130,10 @@ export class AdminPage {
         cy.openLeftMenu('Admin')
         cy.selectSubMenu('Configuration', 'Social Media Authentication')
         cy.get('button').contains(' Add ').click()
-        typeIntoTextField('Name', name)
-        typeIntoTextField('Provider URL', providerUrl)
-        typeIntoTextField('Client ID', clientId)
-        typeIntoTextField('Client Secret', clientSecret)
+        cy.typeIntoTextField('Name', name)
+        cy.typeIntoTextField('Provider URL', providerUrl)
+        cy.typeIntoTextField('Client ID', clientId)
+        cy.typeIntoTextField('Client Secret', clientSecret)
         cy.get('button[type="submit"]').click()
     }
 
