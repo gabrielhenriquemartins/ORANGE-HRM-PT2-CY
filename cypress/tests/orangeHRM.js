@@ -485,7 +485,7 @@ describe('11 - Claim', () => {
     })
 })
 
-describe('12 - Buzz', () => {
+describe.only('12 - Buzz', () => {
 
     beforeEach(() => {
         if (firstTestFailed) {
