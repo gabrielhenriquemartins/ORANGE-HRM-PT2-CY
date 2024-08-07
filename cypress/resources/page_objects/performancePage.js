@@ -2,22 +2,50 @@
 
 export class PerformancePage {
 
+    /**
+    * Command: `addKpi`
+    * 
+    * Description:
+    * Create a new kpi.
+    * 
+    * Usage:
+    * onPerformancePage.addKpi('expense', 'amount')
+    * 
+    * Parameters:
+    * - `name` (String): Key Performance indicator.
+    * - `jobTitle` (String): Job title.
+    * 
+    * Example:
+    * onPerformancePage.addKpi('Active Defects', 'Account Assistant')
+    */
     addKpi(name, jobTitle) {
         cy.openLeftMenu('Performance')
         cy.selectSubMenu('Configure', 'KPIs')
-        cy.get('button').contains(' Add ').click()
+        cy.clickAdd()
         cy.typeIntoTextField('Key Performance Indicator', name)
         cy.selectInDropbox(jobTitle)
-        cy.get('button[type="submit"]').click()
+        cy.clickSubmit()
     }
 
+    /**
+    * Command: `deleteKpi`
+    * 
+    * Description:
+    * Find and delete a KPI.
+    * 
+    * Usage:
+    * onPerformancePage.deleteKpi('name')
+    * 
+    * Parameters:
+    * - `name` (String): KPI to be deleted.
+    *
+    * Example:
+    * onPerformancePage.deleteKpi('Active Defects')
+    */
     deleteKpi(name) {
         cy.openLeftMenu('Performance')
         cy.selectSubMenu('Configure', 'KPIs')
-        cy.get('.oxd-table-card').contains(name).then(tableRow => {
-            cy.wrap(tableRow).parents('[role="row"]').find('.bi-trash').click()
-        })
-        cy.get('button').contains(' Yes, Delete ').click()
+        cy.findAndDelete(name)
     }
 }
 

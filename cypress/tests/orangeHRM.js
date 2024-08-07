@@ -14,6 +14,7 @@ import { onBuzzPage } from "../resources/page_objects/buzzPage"
 
 let firstTestFailed = false
 let login = false
+let costumerAcronym = false
 
 describe('0 - Pipeline Login', () => {
     beforeEach(() => {
@@ -55,7 +56,7 @@ describe('0 - Pipeline Login', () => {
 
     it('Check Forgot Password and Email Message Sent', () => {
         cy.loginPage()
-        onLoginPage.checkOrangeHomePage()
+        onLoginPage.checkForgottenPasswordEmail()
     })
 
     it('Login as Admin', () => {
@@ -79,16 +80,6 @@ describe('1 - Admin', () => {
             cy.loginAsAdmin()
             login = true
         }
-    })
-
-    it('Add Job Title', () => {
-        onAdminPage.addJobTitle('Senior DevOps', 'My Description', 'My Note')
-        cy.checkPopUpAndClose('Successfully Saved')
-    })
-
-    it('Delete Job Title', () => {
-        onAdminPage.deleteJobTitle('Senior DevOps')
-        cy.checkPopUpAndClose('Successfully Deleted')
     })
 
     it('Add Location', () => {
@@ -239,7 +230,10 @@ describe('4 - Time', () => {
     })
 
     it('Add Costumer', () => {
-        onTimePage.addCostumer("Amazon", 'Customer Description!')
+        cy.getRandomString(3).then((randomString) => {
+            costumerAcronym = " - " + randomString
+            onTimePage.addCostumer("Amazon" + costumerAcronym, 'Customer Description!')
+        })
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
@@ -249,12 +243,12 @@ describe('4 - Time', () => {
     })
 
     it('Edit Row In My Timesheet', () => {
-        onTimePage.addRowInMyTimesheet("Amazon", 'Bug Fix')
+        onTimePage.addRowInMyTimesheet("Amazon" + costumerAcronym, 'Bug Fix')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
     it('Delete Costumer', () => {
-        onTimePage.deleteCostumer("Amazon")
+        onTimePage.deleteCostumer("Amazon" + costumerAcronym)
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
@@ -331,14 +325,24 @@ describe('7 - Performance', () => {
             login = true
         }
     })
-
-    it('Add KPI', () => {
-        onPerformancePage.addKpi('Active Defects', 'Account Assistant')
+    it('Add Job Title', () => {
+        onAdminPage.addJobTitle('Senior DevOps', 'My Description', 'My Note')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
+    it('Add KPI', () => {
+        onPerformancePage.addKpi('Active Defects', 'Senior DevOps')
+        cy.checkPopUpAndClose('Successfully Saved')
+    })
+
+
     it('Delete KPI', () => {
         onPerformancePage.deleteKpi('Active Defects')
+        cy.checkPopUpAndClose('Successfully Deleted')
+    })
+
+    it('Delete Job Title', () => {
+        onAdminPage.deleteJobTitle('Senior DevOps')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 })
@@ -418,8 +422,9 @@ describe('10 - Maintenance', () => {
     })
 
     it('Purge Candidate Records', () => {
-        onMaintenancePage.purgeCandidateRecords('Software Engineer')
+        onMaintenancePage.purgeCandidateRecords('Payroll Administrator')
     })
+
 })
 
 describe('11 - Claim', () => {
@@ -485,7 +490,7 @@ describe('11 - Claim', () => {
     })
 })
 
-describe.only('12 - Buzz', () => {
+describe('12 - Buzz', () => {
 
     beforeEach(() => {
         if (firstTestFailed) {

@@ -209,6 +209,16 @@ export class ClaimPage {
         })
     }
 
+    /**
+    * Command: `getCurrentUrl`
+    * 
+    * Description:
+    * Verify if the page contains the expense title, and get the current url.
+    * The url is saved in 'cypress/fixtures/claimUrl.json'
+    * 
+    * Example:
+    * onClaimPage.getCurrentUrl()
+    */
     getCurrentUrl() {
         cy.get('h6').should('contain', 'Expenses')
         cy.url().then((url) => {

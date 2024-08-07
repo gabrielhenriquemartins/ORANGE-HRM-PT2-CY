@@ -43,8 +43,8 @@ Cypress.Commands.add('getRandomString', (length) => {
  */
 Cypress.Commands.add('loginAsAdmin', () => {
     cy.visit('/auth/login')
-    cy.get('input[placeholder="username"]').type('Admin')
-    cy.get('input[placeholder="password"]').type('admin123')
+    cy.get('input[placeholder="Username"]').type('Admin')
+    cy.get('input[placeholder="Password"]').type('admin123')
     cy.get('button[type="submit"]').click()
     cy.get('.oxd-main-menu').should('be.visible')
     cy.getCookies().then(cookies => {
@@ -211,6 +211,26 @@ Cypress.Commands.add('typeIntoTextField', (fieldName, value, index = 0) => {
 })
 
 /**
+ * Custom Command: `selectOption`
+ * 
+ * Description:
+ * This keyword should be used after a cy.typeIntoTextField() or any action that open the 
+ * role='option' element. Shouldn't be used for dropbox.
+ * 
+ * Usage:
+ * cy.selectOption('text')
+ * 
+ * Parameters:
+ * - `option` (String): Option to select.
+ *
+ * Example:
+ * cy.selectOption('Brazil')
+ */
+Cypress.Commands.add('selectOption', (option) => {
+    cy.get('[role="option"]').contains(option).click()
+})
+
+/**
  * Custom Command: `typeIntoTextArea`
  * 
  * Description:
@@ -225,8 +245,8 @@ Cypress.Commands.add('typeIntoTextField', (fieldName, value, index = 0) => {
  * Example:
  * cy.typeIntoTextArea('My description')
  */
-Cypress.Commands.add('typeIntoTextArea', (text) => {
-    cy.get('textarea.oxd-textarea').type(text)
+Cypress.Commands.add('typeIntoTextArea', (text, index = 0) => {
+    cy.get('textarea.oxd-textarea').eq(index).type(text)
     cy.get('textarea.oxd-textarea').invoke('prop', 'value').should('contain', text)
 })
 
@@ -274,8 +294,8 @@ Cypress.Commands.add('clickAdd', (index = 0) => {
  * Example:
  * cy.clickSubmit()
  */
-Cypress.Commands.add('clickSubmit', () => {
-    cy.get('button[type="submit"]').click()
+Cypress.Commands.add('clickSubmit', (index = 0) => {
+    cy.get('button[type="submit"]').eq(index).click()
 })
 
 /**
