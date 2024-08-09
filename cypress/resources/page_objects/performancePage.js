@@ -5,6 +5,8 @@ export class PerformancePage {
     /**
     * Command: `addKpi`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Create a new kpi.
     * 
@@ -29,6 +31,8 @@ export class PerformancePage {
 
     /**
     * Command: `deleteKpi`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Find and delete a KPI.

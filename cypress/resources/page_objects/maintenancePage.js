@@ -5,6 +5,8 @@ export class MaintenancePage {
     /**
     * Command: `purgeCandidateRecords`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Check if there are some data to be purge and purge all. Otherwise,
     * verify the no records pop-up.

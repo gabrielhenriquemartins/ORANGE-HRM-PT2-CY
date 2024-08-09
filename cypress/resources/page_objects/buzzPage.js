@@ -5,6 +5,8 @@ export class BuzzPage {
     /**
     * Command: `postAMessage`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Publish a given message on buzz feed.
     * 
@@ -26,6 +28,8 @@ export class BuzzPage {
     /**
     * Command: `checkFirstPublishedMessage`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Check if the first message on buzz feed contains the desired text.
     * 
@@ -45,6 +49,8 @@ export class BuzzPage {
 
     /**
     * Command: `likeAMessage`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Check if the first message contains '0 likes', then hit the heart button and check if

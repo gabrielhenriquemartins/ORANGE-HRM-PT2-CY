@@ -5,6 +5,8 @@ export class LoginPage {
     /**
     * Command: `checkInvalidCredentialsWithRandomUsernameAndPassword`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Check the invalid credentials, warning the user the wrong login.
     * 
@@ -28,6 +30,8 @@ export class LoginPage {
     /**
     * Command: `checkRequiredPassword`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Check the required password, warning the user when the field is empty.
     * 
@@ -45,6 +49,8 @@ export class LoginPage {
 
     /**
     * Command: `checkRequiredUsername`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Check the required username, warning the user when the field is empty.
@@ -64,6 +70,8 @@ export class LoginPage {
     /**
     * Command: `checkRequiredUsernameAndPassword`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Check the required username and password, warning the user when both fields are empty.
     * 
@@ -78,6 +86,8 @@ export class LoginPage {
 
     /**
     * Command: `checkOrangeHomePage`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Check the orange official home page. There is a expected error related to mansory.
@@ -101,6 +111,8 @@ export class LoginPage {
 
     /**
     * Command: `checkForgottenPasswordEmail`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Check the email to be sent when the user forget the password.

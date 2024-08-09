@@ -7,6 +7,8 @@ export class LeavePage {
     /**
     * Command: `addLeaveType`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Create a new leave type.
     * 
@@ -35,6 +37,8 @@ export class LeavePage {
 
     /**
     * Command: `deleteLeaveType`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Find and delete a leave type.

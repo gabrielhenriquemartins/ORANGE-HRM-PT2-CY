@@ -5,6 +5,8 @@ export class TimePage {
     /**
     * Command: `addPunchInPunchOut`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Create a new punch in / punch out. If the punch out is the first option,
     * the script will confirm the punch out, to back to the punch in, only then the
@@ -39,6 +41,8 @@ export class TimePage {
     /**
     * Command: `deletePunchInPunchOut`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete a given punch in / punch out based on the description field.
     * 
@@ -59,6 +63,8 @@ export class TimePage {
 
     /**
     * Command: `addCostumer`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Create a new customer.
@@ -85,6 +91,8 @@ export class TimePage {
     /**
     * Command: `deleteCostumer`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete a given costumer.
     * 
@@ -105,6 +113,8 @@ export class TimePage {
 
     /**
     * Command: `addProjectAndActivity`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Create a new project and associate a activity.
@@ -140,6 +150,8 @@ export class TimePage {
 
     /**
     * Command: `addRowInMyTimesheet`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Change the first row in my timesheet.

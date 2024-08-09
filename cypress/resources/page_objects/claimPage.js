@@ -9,6 +9,8 @@ export class ClaimPage {
     /**
     * Command: `createAnEvent`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Create a new event with a description.
     * 
@@ -34,6 +36,8 @@ export class ClaimPage {
     /**
     * Command: `deleteAnEvent`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete a new event.
     * 
@@ -54,6 +58,8 @@ export class ClaimPage {
 
     /**
     * Command: `createAnExpenseType`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Create a new expense type with a description.
@@ -80,6 +86,8 @@ export class ClaimPage {
     /**
     * Command: `deleteAnExpenseType`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete an expense type.
     * 
@@ -100,6 +108,8 @@ export class ClaimPage {
 
     /**
     * Command: `submitClaim`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Create a new claim type with a associate currency and remarks.
@@ -126,6 +136,8 @@ export class ClaimPage {
 
     /**
     * Command: `addExpenses`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Create a new expense with the associate amount.
@@ -155,6 +167,8 @@ export class ClaimPage {
     /**
     * Command: `deleteExpenses`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete an expense.
     * 
@@ -177,6 +191,8 @@ export class ClaimPage {
     /**
     * Command: `addPdfToClaim`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Associate a pdf file to a claim.
     * 
@@ -196,6 +212,8 @@ export class ClaimPage {
     /**
     * Command: `deletePdfOfClaim`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete a pdf file associate to a claim.
     * 
@@ -211,6 +229,8 @@ export class ClaimPage {
 
     /**
     * Command: `getCurrentUrl`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Verify if the page contains the expense title, and get the current url.

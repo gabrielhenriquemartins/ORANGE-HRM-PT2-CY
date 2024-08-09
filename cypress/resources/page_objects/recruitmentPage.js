@@ -5,6 +5,8 @@ export class RecruitmentPage {
     /**
     * Command: `addCandidate`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Create a new candidate with full name, email and phone.
     * 
@@ -36,6 +38,8 @@ export class RecruitmentPage {
 
     /**
     * Command: `deleteCandidate`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Find and delete a candidate by name.

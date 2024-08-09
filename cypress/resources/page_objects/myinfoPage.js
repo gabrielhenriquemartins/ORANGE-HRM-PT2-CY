@@ -5,6 +5,8 @@ export class MyInfoPage {
     /**
     * Command: `addPdfToProfile`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Add a pdf to the current profile.
     * 
@@ -22,6 +24,8 @@ export class MyInfoPage {
 
     /**
     * Command: `deletePdfFromProfile`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Find and delete the pdf 'pdf_test.pdf'.

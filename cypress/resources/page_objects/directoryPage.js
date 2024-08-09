@@ -4,6 +4,8 @@ export class DirectoryPage {
     /**
     * Command: `findProfessional`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find a given professional by name, job title or location. Then, the script select
     * the professional and check if the right menu is opened with the given name.

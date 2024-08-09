@@ -5,6 +5,8 @@ export class PimPage {
     /**
     * Command: `addEmployee`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Create a new employee with an unique id.
     * Must be specified the first and last name.
@@ -32,6 +34,8 @@ export class PimPage {
     /**
     * Command: `deleteEmployee`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete an employee by its id.
     * 
@@ -52,6 +56,8 @@ export class PimPage {
 
     /**
     * Command: `addTerminationReason`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Create a new termination reason.
@@ -76,6 +82,8 @@ export class PimPage {
     /**
     * Command: `deleteTerminationReason`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete a termination reason.
     * 
@@ -96,6 +104,8 @@ export class PimPage {
 
     /**
     * Command: `addReportingMethod`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Create a new reporting method.
@@ -119,6 +129,8 @@ export class PimPage {
 
     /**
     * Command: `deleteReportingMethod`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Find and delete a reporting method.

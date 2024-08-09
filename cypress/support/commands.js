@@ -1,7 +1,9 @@
 import 'cypress-file-upload'
 
 /**
- * Custom Command: `getRandomString`
+ * Command: `getRandomString`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Generate a random string with the specified length.
@@ -25,7 +27,9 @@ Cypress.Commands.add('getRandomString', (length) => {
 })
 
 /**
- * Custom Command: `loginAsAdmin`
+ * Command: `loginAsAdmin`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Login into the website as admin and store cookies and localstorage in cypress/fixtures.
@@ -57,7 +61,9 @@ Cypress.Commands.add('loginAsAdmin', () => {
 })
 
 /**
- * Custom Command: `restoreSession`
+ * Command: `restoreSession`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * This command will restore the cookies and local storage, previously saved in cypress/fixture.
@@ -95,7 +101,9 @@ Cypress.Commands.add('restoreSession', () => {
 })
 
 /**
- * Custom Command: `selectInDropbox`
+ * Command: `selectInDropbox`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * This command will click in the first dropbox with '-- Select --'.
@@ -119,7 +127,9 @@ Cypress.Commands.add('selectInDropbox', (name, index = 0) => {
 })
 
 /**
- * Custom Command: `openLeftMenu`
+ * Command: `openLeftMenu`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * This command allows the user to open the desired left menu.
@@ -138,7 +148,9 @@ Cypress.Commands.add('openLeftMenu', (menu) => {
 })
 
 /**
- * Custom Command: `selectSubMenu`
+ * Command: `selectSubMenu`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * This command allows the user to open the desired left menu.
@@ -163,7 +175,9 @@ Cypress.Commands.add('selectSubMenu', (subMenu, subMenu2 = null) => {
 })
 
 /**
- * Custom Command: `checkPopUpAndClose`
+ * Command: `checkPopUpAndClose`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Verify the popup message and close it.
@@ -185,7 +199,9 @@ Cypress.Commands.add('checkPopUpAndClose', (message) => {
 })
 
 /**
- * Custom Command: `typeIntoTextField`
+ * Command: `typeIntoTextField`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Check the label associated to a input field, then check for the
@@ -211,7 +227,9 @@ Cypress.Commands.add('typeIntoTextField', (fieldName, value, index = 0) => {
 })
 
 /**
- * Custom Command: `selectOption`
+ * Command: `selectOption`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * This keyword should be used after a cy.typeIntoTextField() or any action that open the 
@@ -231,7 +249,9 @@ Cypress.Commands.add('selectOption', (option) => {
 })
 
 /**
- * Custom Command: `typeIntoTextArea`
+ * Command: `typeIntoTextArea`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * The command will type the desired text and verify if it was correctly typed.
@@ -251,7 +271,9 @@ Cypress.Commands.add('typeIntoTextArea', (text, index = 0) => {
 })
 
 /**
- * Custom Command: `findAndDelete`
+ * Command: `findAndDelete`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Find and delete an item in a row.
@@ -273,7 +295,9 @@ Cypress.Commands.add('findAndDelete', (item) => {
 })
 
 /**
- * Custom Command: `clickAdd`
+ * Command: `clickAdd`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Click Button Add.
@@ -286,7 +310,9 @@ Cypress.Commands.add('clickAdd', (index = 0) => {
 })
 
 /**
- * Custom Command: `clickSubmit`
+ * Command: `clickSubmit`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Click Button Submit, Save, or any with the given selector.
@@ -299,7 +325,9 @@ Cypress.Commands.add('clickSubmit', (index = 0) => {
 })
 
 /**
- * Custom Command: `loginPage`
+ * Command: `loginPage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to login page.
@@ -312,7 +340,9 @@ Cypress.Commands.add('loginPage', () => {
 })
 
 /**
- * Custom Command: `adminPage`
+ * Command: `adminPage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to admin page.
@@ -325,7 +355,9 @@ Cypress.Commands.add('adminPage', () => {
 })
 
 /**
- * Custom Command: `pimPage`
+ * Command: `pimPage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to pim page.
@@ -338,7 +370,9 @@ Cypress.Commands.add('pimPage', () => {
 })
 
 /**
- * Custom Command: `leavePage`
+ * Command: `leavePage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to leave page.
@@ -351,7 +385,9 @@ Cypress.Commands.add('leavePage', () => {
 })
 
 /**
- * Custom Command: `recruitmentPage`
+ * Command: `recruitmentPage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to recruitment page.
@@ -364,7 +400,9 @@ Cypress.Commands.add('recruitmentPage', () => {
 })
 
 /**
- * Custom Command: `performancePage`
+ * Command: `performancePage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to performance page.
@@ -377,7 +415,9 @@ Cypress.Commands.add('performancePage', () => {
 })
 
 /**
- * Custom Command: `dashboardPage`
+ * Command: `dashboardPage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to dashboard page.
@@ -390,7 +430,9 @@ Cypress.Commands.add('dashboardPage', () => {
 })
 
 /**
- * Custom Command: `directoryPage`
+ * Command: `directoryPage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to directory page.
@@ -403,7 +445,9 @@ Cypress.Commands.add('directoryPage', () => {
 })
 
 /**
- * Custom Command: `maintenancePage`
+ * Command: `maintenancePage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to maintenance page.
@@ -416,7 +460,9 @@ Cypress.Commands.add('maintenancePage', () => {
 })
 
 /**
- * Custom Command: `claimPage`
+ * Command: `claimPage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to claim page.
@@ -429,7 +475,9 @@ Cypress.Commands.add('claimPage', () => {
 })
 
 /**
- * Custom Command: `buzzPage`
+ * Command: `buzzPage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to buzz page.
@@ -442,7 +490,9 @@ Cypress.Commands.add('buzzPage', () => {
 })
 
 /**
- * Custom Command: `timePage`
+ * Command: `timePage`
+ * 
+ * Author: Gabriel Martins
  * 
  * Description:
  * Go to time page.

@@ -7,6 +7,8 @@ export class AdminPage {
     /**
     * Command: `addJobTitle`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Create a new job title with a given description and note.
     * 
@@ -37,6 +39,8 @@ export class AdminPage {
     /**
     * Command: `deleteJobTitle`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete a given job title.
     * 
@@ -57,6 +61,8 @@ export class AdminPage {
 
     /**
     * Command: `addLocation`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Create a new location with a given name, city, state, country, zip code, phone and fax.
@@ -99,6 +105,8 @@ export class AdminPage {
     /**
     * Command: `deleteLocation`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete a given location.
     * 
@@ -127,6 +135,8 @@ export class AdminPage {
 
     /**
     * Command: `deleteLanguage`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Find and delete a given language.
@@ -157,6 +167,8 @@ export class AdminPage {
     /**
     * Command: `deleteMembership`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete a given membership.
     * 
@@ -177,6 +189,8 @@ export class AdminPage {
 
     /**
     * Command: `addNationality`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Add a given nationality. To avoid duplication errors, a random string 3 chars long is added
@@ -206,6 +220,8 @@ export class AdminPage {
     /**
     * Command: `deleteNationality`
     * 
+    * Author: Gabriel Martins
+    * 
     * Description:
     * Find and delete a given nationality.
     * 
@@ -230,6 +246,8 @@ export class AdminPage {
 
     /**
     * Command: `sendEmailConfiguration`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Send a email from the desired email set to a deseired destination.
@@ -256,6 +274,8 @@ export class AdminPage {
 
     /**
     * Command: `addSocialMediaAuthentication`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Add a given social media authentication.
@@ -285,6 +305,8 @@ export class AdminPage {
 
     /**
     * Command: `deleteSocialMediaAuthentication`
+    * 
+    * Author: Gabriel Martins
     * 
     * Description:
     * Find and delete a given social media authentication.
