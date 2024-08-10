@@ -458,11 +458,6 @@ describe('11 - Claim', () => {
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete An Expense Type', () => {
-        onClaimPage.deleteAnExpenseType('Expense Test')
-        cy.checkPopUpAndClose('Successfully Deleted')
-    })
-
     it('Submit Claim', () => {
         onClaimPage.submitClaim('Accommodation', 'Canadian Dollar', 'My Remarks')
         cy.checkPopUpAndClose('Successfully Saved')
@@ -470,12 +465,17 @@ describe('11 - Claim', () => {
     })
 
     it('Add Expenses', () => {
-        onClaimPage.addExpenses('Transport', '20')
+        onClaimPage.addExpenses('Expense Test', '20')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
     it('Delete Expenses', () => {
-        onClaimPage.deleteExpenses('Transport')
+        onClaimPage.deleteExpenses('Expense Test')
+        cy.checkPopUpAndClose('Successfully Deleted')
+    })
+
+    it('Delete An Expense Type', () => {
+        onClaimPage.deleteAnExpenseType('Expense Test')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
