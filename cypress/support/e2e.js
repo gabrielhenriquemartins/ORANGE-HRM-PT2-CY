@@ -15,6 +15,15 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import 'cypress-mochawesome-reporter/register';
+import addContext from "mochawesome/addContext";
 
+Cypress.on("test:after:run", (test, runnable) => {
+    if (test.state === "false") {
+        const screenshot = `./assets/${Cypress.spec.name}/${runnable.parent.title} -- ${test.title} (failed).png`;
+        addContext({ test }, screenshot);
+        console.log('test:after:run fired', test, runnable);
+    }
+});
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

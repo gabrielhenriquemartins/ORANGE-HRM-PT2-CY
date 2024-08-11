@@ -250,6 +250,7 @@ describe('4 - Time', () => {
     it('Delete Costumer', () => {
         onTimePage.deleteCostumer("Amazon" + costumerAcronym)
         cy.checkPopUpAndClose('Successfully Deleted')
+        // cy.checkPopUpAndClose('Not allowed to delete customer(s) associated with projects that have time logged against them')
     })
 
 
