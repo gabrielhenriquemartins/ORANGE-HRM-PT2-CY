@@ -4,8 +4,9 @@ const mochawesomeReporter = require('cypress-mochawesome-reporter/plugin');
 module.exports = defineConfig({
   viewportHeight: 1080,
   viewportWidth: 1920,
-  video: false,
-  screenshotsFolder: "cypress/reports/screenshots",
+  video: true,
+  videoCompression: true,
+  screenshotsFolder: "cypress/reports/mocha/screenshots",
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,

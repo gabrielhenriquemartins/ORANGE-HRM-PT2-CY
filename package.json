@@ -4,19 +4,19 @@
   "description": "In progress",
   "main": "cypress.config.js",
   "scripts": {
-    "remove:reports": "if exist cypress\\reports (rd /s /q cypress\\reports) else (echo Directory does not exist)",
-    "remove:archieve": "if exist cypress\\archive\\ (rd /s /q cypress\\archive\\) else (echo Directory does not exist)",
-    "make:directories": "mkdir cypress\\reports  &&  mkdir cypress\\archive\\",
-    "pretest": "npm run remove:reports && npm run remove:archieve && npm run make:directories",
+    "remove:currentreport": "rm -rf cypress/reports/$(date +'%Y-%m-%d')",
+    "create:currentreport": "mkdir -p cypress/reports/$(date +'%Y-%m-%d')",
+    "pretest": "npm run remove:currentreport && npm run create:currentreport",
     "scripts": "cypress run",
-    "archive-report": "xcopy /s /i /y cypress\\reports\\mocha cypress\\archive\\",
-    "test": "npm run scripts && npm run archive-report"
+    "archive-report": "cp -r cypress/reports/mocha cypress/reports/$(date +'%Y-%m-%d')/",
+    "test": "npm run scripts; npm run archive-report"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.13.2",
+    "cypress-file-upload": "^5.0.8",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-multi-reporters": "^1.6.4"
   },
