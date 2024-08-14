@@ -241,4 +241,4 @@ else:
         print(f'CREATE TEST - {tests}')
         # id = create_test_and_return_id(project_key, tests)
         # associate_test_to_a_test_plan(test_plan, f'{project_key}-{id}')
-        find_and_replace('999', tests)
+        find_and_replace(id, tests)
