@@ -8,7 +8,7 @@
     "create:currentreport": "mkdir -p cypress/reports/$(date +'%Y-%m-%d')",
     "pretest": "npm run remove:currentreport && npm run create:currentreport",
     "scripts": "cypress run",
-    "archive-report": "cp -r cypress/reports/mocha cypress/reports/$(date +'%Y-%m-%d')/",
+    "archive-report": "cp -r cypress/reports/mocha cypress/reports/$(date +'%Y-%m-%d')/ && rm -rf cypress/reports/mocha",
     "test": "npm run scripts; npm run archive-report"
   },
   "keywords": [],

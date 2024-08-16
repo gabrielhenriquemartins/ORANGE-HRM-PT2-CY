@@ -5,7 +5,7 @@ import os
 import re
 
 ##### JIRA PROJECT VARIABLE #####
-project_key = 'your-project'
+project_key = 'your-project-key'
 test_plan = 'your-test-plan'
 description = 'Generic Description! Please, input here the test step ...'
 comment_new = 'Test Created!' 
@@ -13,11 +13,11 @@ comment_update = 'Automated Tests Updated! Another test with the same name was i
 
 ##### JIRA VARIABLES #####
 JIRA = 'your-domain'
-API_TOKEN = 'your-token'
-USER = 'your-email'
+API_TOKEN = 'your-api-token'
+USER = 'your-user'
 
-##### ROBOT FOLDER #####
-path_cypress = 'C:/Users/Gabriel/Desktop/CY-ORANGE/ORANGE-HRM-PT2-CY/cypress/tests'
+##### CYPRESS FOLDER #####
+file_path = "your-path-to-test-folder"
 
 # ---------------------------------------------- #
 #            Add Comments to an Issue            #
@@ -239,6 +239,6 @@ if len(tests_to_create) == 0:
 else:
     for tests in tests_to_create:
         print(f'CREATE TEST - {tests}')
-        # id = create_test_and_return_id(project_key, tests)
-        # associate_test_to_a_test_plan(test_plan, f'{project_key}-{id}')
+        id = create_test_and_return_id(project_key, tests)
+        associate_test_to_a_test_plan(test_plan, f'{project_key}-{id}')
         find_and_replace(id, tests)

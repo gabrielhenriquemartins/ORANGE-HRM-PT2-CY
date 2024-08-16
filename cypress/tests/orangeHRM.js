@@ -29,44 +29,44 @@ describe('0 - Pipeline Login', () => {
         }
     })
 
-    it('Check Invalid Credentials', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Check Invalid Credentials', () => {
+        cy.log('OTS-2')
         cy.loginPage()
         onLoginPage.checkInvalidCredentialsWithRandomUsernameAndPassword()
     })
 
-    it('Check Required Password', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Check Required Password', () => {
+        cy.log('OTS-3')
         cy.loginPage()
         onLoginPage.checkRequiredPassword()
     })
 
-    it('Check Required Username', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Check Required Username', () => {
+        cy.log('OTS-4')
         cy.loginPage()
         onLoginPage.checkRequiredUsername()
     })
 
-    it('Check Required Username and Password', () => {
-        cy.log('OTS-XXX')
+    it('[CY] [CY] Check Required Username and Password', () => {
+        cy.log('OTS-4')
         cy.loginPage()
         onLoginPage.checkRequiredUsernameAndPassword()
     })
 
-    it('Check Official Orange Home Page', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Check Official Orange Home Page', () => {
+        cy.log('OTS-6')
         cy.loginPage()
         onLoginPage.checkOrangeHomePage()
     })
 
-    it('Check Forgot Password and Email Message Sent', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Check Forgot Password and Email Message Sent', () => {
+        cy.log('OTS-7')
         cy.loginPage()
         onLoginPage.checkForgottenPasswordEmail()
     })
 
-    it('Login as Admin', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Login as Admin', () => {
+        cy.log('OTS-8')
         cy.loginPage()
         cy.loginAsAdmin()
         login = true
@@ -89,69 +89,69 @@ describe('1 - Admin', () => {
         }
     })
 
-    it('Add Location', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Location', () => {
+        cy.log('OTS-9')
         onAdminPage.addLocation('R&D', 'New York', 'California', 'Brazil', '1000', '1000', '1000')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Location', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Location', () => {
+        cy.log('OTS-10')
         onAdminPage.deleteLocation('R&D')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
-    it('Add Language', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Language', () => {
+        cy.log('OTS-11')
         onAdminPage.addLanguage('Brazilian')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Language', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Language', () => {
+        cy.log('OTS-12')
         onAdminPage.deleteLanguage('Brazilian')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
-    it('Add Membership', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Membership', () => {
+        cy.log('OTS-13')
         onAdminPage.addMembership('ISTQB')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Membership', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Membership', () => {
+        cy.log('OTS-14')
         onAdminPage.deleteMembership('ISTQB')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
-    it('Add Nationality', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Nationality', () => {
+        cy.log('OTS-15')
         onAdminPage.addNationality('Brazilian')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Nationality', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Nationality', () => {
+        cy.log('OTS-16')
         onAdminPage.deleteNationality('Brazilian')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
-    it('Send Email Configuration', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Send Email Configuration', () => {
+        cy.log('OTS-17')
         onAdminPage.sendEmailConfiguration('test_sender@hotmail.com', 'test_destination@hotmail.com')
         cy.checkPopUpAndClose('Test Email Sent')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Add Social Media Authentication', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Social Media Authentication', () => {
+        cy.log('OTS-18')
         onAdminPage.addSocialMediaAuthentication('provider_test', 'provider.com', '123456', '123456')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Social Media Authentication', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Social Media Authentication', () => {
+        cy.log('OTS-19')
         onAdminPage.deleteSocialMediaAuthentication('provider_test')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
@@ -173,26 +173,26 @@ describe('2 - PIM', () => {
         }
     })
 
-    it('Add Termination Reason', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Termination Reason', () => {
+        cy.log('OTS-20')
         onPimPage.addTerminationReason('Vacation')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Termination Reason', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Termination Reason', () => {
+        cy.log('OTS-21')
         onPimPage.deleteTerminationReason('Vacation')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
-    it('Add Reporting Method', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Reporting Method', () => {
+        cy.log('OTS-22')
         onPimPage.addReportingMethod('One-o-One')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Reporting Method', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Reporting Method', () => {
+        cy.log('OTS-23')
         onPimPage.deleteReportingMethod('One-o-One')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
@@ -214,14 +214,14 @@ describe('3 - Leave', () => {
         }
     })
 
-    it('Add Leave Type', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Leave Type', () => {
+        cy.log('OTS-24')
         onLeavePage.addLeaveType('Carnival', "true")
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Leave Type', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Leave Type', () => {
+        cy.log('OTS-25')
         onLeavePage.deleteLeaveType('Carnival')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
@@ -243,20 +243,20 @@ describe('4 - Time', () => {
         }
     })
 
-    it('Add Punch in Punch Out', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Punch in Punch Out', () => {
+        cy.log('OTS-26')
         onTimePage.addPunchInPunchOut("My Description!")
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Punch in Punch Out', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Punch in Punch Out', () => {
+        cy.log('OTS-27')
         onTimePage.deletePunchInPunchOut("My Description!")
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
-    it('Add Costumer', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Costumer', () => {
+        cy.log('OTS-28')
         cy.getRandomString(3).then((randomString) => {
             costumerAcronym = " - " + randomString
             onTimePage.addCostumer("Amazon" + costumerAcronym, 'Customer Description!')
@@ -264,20 +264,20 @@ describe('4 - Time', () => {
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Add Project and Activity', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Project and Activity', () => {
+        cy.log('OTS-29')
         onTimePage.addProjectAndActivity("Arquiteture", 'Amazon', 'Bug Fix', 'Activity Description')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Edit Row In My Timesheet', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Edit Row In My Timesheet', () => {
+        cy.log('OTS-30')
         onTimePage.addRowInMyTimesheet("Amazon" + costumerAcronym, 'Bug Fix')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Costumer', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Costumer', () => {
+        cy.log('OTS-31')
         onTimePage.deleteCostumer("Amazon" + costumerAcronym)
         cy.checkPopUpAndClose('Successfully Deleted')
         // cy.checkPopUpAndClose('Not allowed to delete customer(s) associated with projects that have time logged against them')
@@ -303,14 +303,14 @@ describe('5 - Recruitment', () => {
         }
     })
 
-    it('Add Candidate', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Candidate', () => {
+        cy.log('OTS-32')
         onRecruitmentPage.addCandidate('Gabriel', 'Henrique', 'Martins', 'test@hotmail.com', '1000')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Candidate', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Candidate', () => {
+        cy.log('OTS-33')
         onRecruitmentPage.deleteCandidate('Gabriel Henrique Martins')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
@@ -332,14 +332,14 @@ describe('6 - My Info', () => {
         }
     })
 
-    it('Add Pdf To Profile', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Pdf To Profile', () => {
+        cy.log('OTS-34')
         onMyInfoPage.addPdfToProfile()
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Pdf From Profile', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Pdf From Profile', () => {
+        cy.log('OTS-35')
         onMyInfoPage.deletePdfFromProfile()
         cy.checkPopUpAndClose('Successfully Deleted')
     })
@@ -360,27 +360,27 @@ describe('7 - Performance', () => {
             login = true
         }
     })
-    it('Add Job Title', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Job Title', () => {
+        cy.log('OTS-36')
         onAdminPage.addJobTitle('Senior DevOps', 'My Description', 'My Note')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Add KPI', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add KPI', () => {
+        cy.log('OTS-37')
         onPerformancePage.addKpi('Active Defects', 'Senior DevOps')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
 
-    it('Delete KPI', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete KPI', () => {
+        cy.log('OTS-38')
         onPerformancePage.deleteKpi('Active Defects')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
-    it('Delete Job Title', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Job Title', () => {
+        cy.log('OTS-39')
         onAdminPage.deleteJobTitle('Senior DevOps')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
@@ -402,8 +402,8 @@ describe('8 - Dashboard', () => {
         }
     })
 
-    it('Check Main Dashboards', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Check Main Dashboards', () => {
+        cy.log('OTS-40')
         onDashboardPage.checkDashboard('Time at Work')
         onDashboardPage.checkDashboard('My Actions')
         onDashboardPage.checkDashboard('Quick Launch')
@@ -430,19 +430,19 @@ describe('9 - Directory/PIM', () => {
         }
     })
 
-    it('Add Employee', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Employee', () => {
+        cy.log('OTS-41')
         onPimPage.addEmployee('Gabriel', 'Martins', '8884')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Find Profession Role', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Find Profession Role', () => {
+        cy.log('OTS-42')
         onDirectoryPage.findProfessional('Gabriel', 'Martins')
     })
 
-    it('Delete Employee', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Employee', () => {
+        cy.log('OTS-43')
         onPimPage.deleteEmployee('8884')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
@@ -464,8 +464,8 @@ describe('10 - Maintenance', () => {
         }
     })
 
-    it('Purge Candidate Records', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Purge Candidate Records', () => {
+        cy.log('OTS-44')
         onMaintenancePage.purgeCandidateRecords('Payroll Administrator')
     })
 
@@ -487,57 +487,57 @@ describe('11 - Claim', () => {
         }
     })
 
-    it('Create An Event', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Create An Event', () => {
+        cy.log('OTS-45')
         onClaimPage.createAnEvent('Event Test', 'My description!')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete An Event', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete An Event', () => {
+        cy.log('OTS-46')
         onClaimPage.deleteAnEvent('Event Test')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
-    it('Create An Expense Type', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Create An Expense Type', () => {
+        cy.log('OTS-47')
         onClaimPage.createAnExpenseType('Expense Test', 'My description!')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Submit Claim', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Submit Claim', () => {
+        cy.log('OTS-48')
         onClaimPage.submitClaim('Accommodation', 'Canadian Dollar', 'My Remarks')
         cy.checkPopUpAndClose('Successfully Saved')
         onClaimPage.getCurrentUrl()
     })
 
-    it('Add Expenses', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add Expenses', () => {
+        cy.log('OTS-49')
         onClaimPage.addExpenses('Expense Test', '20')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete Expenses', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete Expenses', () => {
+        cy.log('OTS-50')
         onClaimPage.deleteExpenses('Expense Test')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
-    it('Delete An Expense Type', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete An Expense Type', () => {
+        cy.log('OTS-51')
         onClaimPage.deleteAnExpenseType('Expense Test')
         cy.checkPopUpAndClose('Successfully Deleted')
     })
 
-    it('Add PDF to a Claim', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Add PDF to a Claim', () => {
+        cy.log('OTS-52')
         onClaimPage.addPdfToClaim()
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Delete a PDF from a Claim', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Delete a PDF from a Claim', () => {
+        cy.log('OTS-53')
         onClaimPage.deletePdfOfClaim()
         cy.checkPopUpAndClose('Successfully Deleted')
     })
@@ -559,19 +559,19 @@ describe('12 - Buzz', () => {
         }
     })
 
-    it('Post a Message', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Post a Message', () => {
+        cy.log('OTS-54')
         onBuzzPage.postAMessage('Hello world!!! :)')
         cy.checkPopUpAndClose('Successfully Saved')
     })
 
-    it('Check Published Message', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Check Published Message', () => {
+        cy.log('OTS-55')
         onBuzzPage.checkFirstPublishedMessage('Hello world!!! :)')
     })
 
-    it('Like a Message', () => {
-        cy.log('OTS-XXX')
+    it('[CY] Like a Message', () => {
+        cy.log('OTS-56')
         onBuzzPage.likeAMessage()
     })
 })

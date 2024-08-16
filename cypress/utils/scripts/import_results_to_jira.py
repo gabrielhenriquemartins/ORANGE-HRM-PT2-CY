@@ -9,20 +9,20 @@ current_date = datetime.now()
 today = current_date.strftime('%Y-%m-%d')
 
 ##### JIRA PROJECT VARIABLE #####
-project_key = "your-project"
+project_key = "your-project-key"
 test_plan_key = "your-test-plan"
 
 ##### JIRA VARIABLES #####
 JIRA = 'your-domain'
-USER = 'your-email'
-API_TOKEN = 'your-token'
+API_TOKEN = 'your-api-token'
+USER = 'your-user'
 
 ##### XRAY VARIABLES #####
 client_id = "your-client-id"
 client_secret = "your-client-secret"
 
 ##### FILE PATHS JSON #####
-file_path = f"C:/Users/Gabriel/Desktop/CY-ORANGE/ORANGE-HRM-PT2-CY/cypress/reports/{today}/mocha"
+file_path = f"your-path-to-last-mocha-folder"
 
 data = {
     "info": {
@@ -56,12 +56,13 @@ def authenticate(client_id, client_secret):
 # ---------------------------------------------- #
 #             IMPORT JSON INTO XRAY              #
 # ---------------------------------------------- #
-def import_json(token, file_path):
+def import_json(token):
+    json_to_import = os.path.join(file_path, "import.json")
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {token}"
     }
-    with open(file_path, 'rb') as file:
+    with open(json_to_import, 'rb') as file:
         data = file.read()
 
     url = f"https://xray.cloud.getxray.app/api/v2/import/execution"
@@ -147,6 +148,6 @@ def is_test_passed(file_path):
                     print('----------------------------------')
 
 is_test_passed(file_path)
-# token = authenticate(client_id, client_secret)
-# import_json(token, file_path)
-write_into_json("last_execution", "FINAL")
+write_into_json("last_execution", "update")
+token = authenticate(client_id, client_secret)
+import_json(token)
