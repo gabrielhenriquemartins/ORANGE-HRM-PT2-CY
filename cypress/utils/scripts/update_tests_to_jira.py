@@ -35,8 +35,8 @@ def get_values_in_command_line():
         print(f'Jira API Token: {API_TOKEN}')
         USER = sys.argv[5]
         print(f'Jira User E-mail: {USER}')
-        path_cypress = sys.argv[6]
-        print(f'Cypress Path: {path_cypress}')
+        file_path = sys.argv[6]
+        print(f'Cypress Path: {file_path}')
     else:
         print("Not enough arguments provided.")
 
@@ -201,7 +201,7 @@ def get_id_number(text):
 def find_and_replace(TEST_NUMBER, TEST_NAME):
     control_variavel = 0
     if TEST_NUMBER != None:
-        for root, dirs, files in os.walk(path_cypress):
+        for root, dirs, files in os.walk(file_path):
             for file_name in files:
                 if file_name.endswith('.js'):
                     file_path = os.path.join(root, file_name)
@@ -254,7 +254,7 @@ def associate_test_to_a_test_plan(test_plan, TEST):
         print(f'Response: {response.text}')
 
 get_values_in_command_line()
-tests_to_create = find_texts_in_files(path_cypress)
+tests_to_create = find_texts_in_files(file_path)
 if len(tests_to_create) == 0:
     print("No new tests were found, nothing will be created in Jira!")
 else:
