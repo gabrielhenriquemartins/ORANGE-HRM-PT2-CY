@@ -1,6 +1,7 @@
 import requests
 from requests.auth import HTTPBasicAuth
 import json
+import sys
 import os
 import re
 
@@ -18,6 +19,26 @@ USER = 'your-user'
 
 ##### CYPRESS FOLDER #####
 file_path = "your-path-to-test-folder"
+
+# ---------------------------------------------- #
+#            Get values from command line        #
+# ---------------------------------------------- #
+def get_values_in_command_line():
+    if len(sys.argv) == 7:
+        project_key = sys.argv[1]
+        print(f'Project Key: {project_key}')
+        test_plan = sys.argv[2]
+        print(f'Test Plan: {test_plan}')
+        JIRA = sys.argv[3]
+        print(f'Jira Domain: {JIRA}')
+        API_TOKEN = sys.argv[4]
+        print(f'Jira API Token: {API_TOKEN}')
+        USER = sys.argv[5]
+        print(f'Jira User E-mail: {USER}')
+        path_cypress = sys.argv[6]
+        print(f'Cypress Path: {path_cypress}')
+    else:
+        print("Not enough arguments provided.")
 
 # ---------------------------------------------- #
 #            Add Comments to an Issue            #
@@ -232,7 +253,7 @@ def associate_test_to_a_test_plan(test_plan, TEST):
         print(f'Failed to link')
         print(f'Response: {response.text}')
 
-
+get_values_in_command_line()
 tests_to_create = find_texts_in_files(path_cypress)
 if len(tests_to_create) == 0:
     print("No new tests were found, nothing will be created in Jira!")
