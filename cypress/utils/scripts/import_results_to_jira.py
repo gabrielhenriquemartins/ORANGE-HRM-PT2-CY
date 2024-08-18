@@ -176,6 +176,7 @@ def is_test_passed(file_path):
                     print('Test is not ready to be imported. Does not contain the automation label [CY]!')
                     print('----------------------------------')
 
+get_values_in_command_line()
 is_test_passed(file_path)
 write_into_json("last_execution", "update")
 token = authenticate(client_id, client_secret)
