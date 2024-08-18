@@ -1,8 +1,13 @@
 import requests
 import json
 import os
+import sys
 from datetime import datetime
 from requests.auth import HTTPBasicAuth
+
+##### POPULATE THE VARIABLE TODAY, TO GET THE OUTPUT JSON #####
+current_date = datetime.now()
+today = current_date.strftime('%Y-%m-%d')
 
 ##### POPULATE THE VARIABLE TODAY, TO GET THE OUTPUT JSON #####
 current_date = datetime.now()
@@ -33,6 +38,30 @@ data = {
     },
     "tests": []
 }
+
+# ---------------------------------------------- #
+#            Get values from command line        #
+# ---------------------------------------------- #
+def get_values_in_command_line():
+    if len(sys.argv) == 9:
+        project_key = sys.argv[1]
+        print(f'Project Key: {project_key}')
+        test_plan_key = sys.argv[2]
+        print(f'Test Plan: {test_plan_key}')
+        JIRA = sys.argv[3]
+        print(f'Jira Domain: {JIRA}')
+        API_TOKEN = sys.argv[4]
+        print(f'Jira API Token: {API_TOKEN}')
+        USER = sys.argv[5]
+        print(f'Jira User E-mail: {USER}')
+        client_id = sys.argv[6]
+        print(f'Xray, Client ID: {client_id}')
+        client_secret = sys.argv[7]
+        print(f'Xray, Client Secret: {client_secret}')
+        file_path = sys.argv[8]
+        print(f'Cypress Path: {file_path}')
+    else:
+        print("Not enough arguments provided.")
 
 # ---------------------------------------------- #
 #    AUTHENTICATE INTO XRAY, AND RETURN TOKEN    #
