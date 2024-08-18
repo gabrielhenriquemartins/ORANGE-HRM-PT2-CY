@@ -24,6 +24,7 @@ file_path = "your-path-to-test-folder"
 #            Get values from command line        #
 # ---------------------------------------------- #
 def get_values_in_command_line():
+    global project_key, test_plan, JIRA, API_TOKEN, USER, file_path
     if len(sys.argv) == 7:
         project_key = sys.argv[1]
         print(f'Project Key: {project_key}')
