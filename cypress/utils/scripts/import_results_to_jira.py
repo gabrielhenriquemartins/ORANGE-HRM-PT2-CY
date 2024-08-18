@@ -43,7 +43,7 @@ data = {
 #            Get values from command line        #
 # ---------------------------------------------- #
 def get_values_in_command_line():
-    global project_key, test_plan_key, JIRA, API_TOKEN, USER, client_id, client_secret, file_path
+    global project_key, test_plan_key, JIRA, API_TOKEN, USER, client_id, client_secret, file_path, data
     if len(sys.argv) == 9:
         project_key = sys.argv[1]
         print(f'Project Key: {project_key}')
@@ -61,6 +61,15 @@ def get_values_in_command_line():
         print(f'Xray, Client Secret: {client_secret}')
         file_path = sys.argv[8]
         print(f'Cypress Path: {file_path}')
+        data = {
+            "info": {
+                "project": f"{project_key}",
+                "summary": f"Automatic: Cypress Test Execution at {today}",
+                "description": f"This execution is related to the project {project_key}, and realized at {today}",
+                "testPlanKey": f"{test_plan_key}"
+            },
+            "tests": []
+            }
     else:
         print("Not enough arguments provided.")
 
