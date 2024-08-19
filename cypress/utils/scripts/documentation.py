@@ -3,8 +3,20 @@ import os
 import glob
 import shutil
 import json
+import sys
 
-directory_project = 'C:/Users/Gabriel/Desktop/CY-ORANGE/ORANGE-HRM-PT2-CY/cypress'
+directory_project = 'your-directory'
+
+# ---------------------------------------------- #
+#            Get values from command line        #
+# ---------------------------------------------- #
+def get_values_in_command_line():
+    global directory_project
+    if len(sys.argv) == 2:
+        directory_project = sys.argv[1]
+        print(f'Project directory: {directory_project}')
+    else:
+        print("Not enough arguments provided.")
 
 def delete_and_create_new_folder(folder):
     if os.path.exists(folder):
@@ -104,5 +116,6 @@ def create_documentation(input_file, output_file):
                 file.write(f"## Parameters:\n\n{parameters}\n\n")
             file.write(f"## Example:\n\n```js\n{example}\n```")
 
-if __name__ == "__main__":
-    find_all_files_and_create_the_documentation(directory_project, custom_commands=True)
+
+get_values_in_command_line()
+find_all_files_and_create_the_documentation(directory_project, custom_commands=True)
