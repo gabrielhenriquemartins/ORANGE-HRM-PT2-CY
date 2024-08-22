@@ -108,10 +108,10 @@ export class TimePage {
     * Example:
     * onTimePage.deleteCostumer('Amazon')
     */
-    deleteCostumer(costumer) {
+    deleteCostumer(costumer, state) {
         cy.openLeftMenu('Time')
         cy.selectSubMenu('Project Info', 'Customers')
-        cy.findAndDelete(costumer)
+        cy.findAndDelete(costumer, state)
     }
 
     /**

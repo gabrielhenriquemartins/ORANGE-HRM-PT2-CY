@@ -283,15 +283,18 @@ Cypress.Commands.add('typeIntoTextArea', (text, index = 0) => {
  *  
  * Parameters:
  * - `item` (String): Item to be deleted.
+ * - `state` (String): Cab be true or false.
  * 
  * Example:
  * cy.findAndDelete('Gabriel')
  */
-Cypress.Commands.add('findAndDelete', (item) => {
+Cypress.Commands.add('findAndDelete', (item, state = True) => {
     cy.get('.oxd-table-card').contains(item).then(tableRow => {
         cy.wrap(tableRow).parents('[role="row"]').find('.bi-trash').click()
     })
-    cy.get('button').contains(' Yes, Delete ').click()
+    if (state == True) {
+        cy.get('button').contains(' Yes, Delete ').click()
+    }
 })
 
 /**

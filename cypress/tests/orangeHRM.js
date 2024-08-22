@@ -278,7 +278,7 @@ describe('4 - Time', () => {
 
     it('[CY] Delete Costumer', () => {
         cy.log('OTS-31')
-        onTimePage.deleteCostumer("Amazon" + costumerAcronym)
+        onTimePage.deleteCostumer("Amazon" + costumerAcronym, false)
         // cy.checkPopUpAndClose('Successfully Deleted')
         cy.checkPopUpAndClose('Not allowed to delete customer(s) associated with projects that have time logged against them')
     })
