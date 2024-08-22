@@ -47,7 +47,7 @@ describe('0 - Pipeline Login', () => {
         onLoginPage.checkRequiredUsername()
     })
 
-    it('[CY] [CY] Check Required Username and Password', () => {
+    it('[CY] Check Required Username and Password', () => {
         cy.log('OTS-4')
         cy.loginPage()
         onLoginPage.checkRequiredUsernameAndPassword()
@@ -279,8 +279,8 @@ describe('4 - Time', () => {
     it('[CY] Delete Costumer', () => {
         cy.log('OTS-31')
         onTimePage.deleteCostumer("Amazon" + costumerAcronym)
-        cy.checkPopUpAndClose('Successfully Deleted')
-        // cy.checkPopUpAndClose('Not allowed to delete customer(s) associated with projects that have time logged against them')
+        // cy.checkPopUpAndClose('Successfully Deleted')
+        cy.checkPopUpAndClose('Not allowed to delete customer(s) associated with projects that have time logged against them')
     })
 
 

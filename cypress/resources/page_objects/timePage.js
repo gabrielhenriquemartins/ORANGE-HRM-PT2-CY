@@ -35,6 +35,9 @@ export class TimePage {
         cy.clickSubmit()
         cy.checkPopUpAndClose('Successfully Saved')
         cy.get('.orangehrm-card-container h6').should('contain', 'Punch Out')
+        cy.get('.bi-clock').click()
+        cy.get('[name="pm"]').click()
+        cy.get('.oxd-time-hour-input .bi-chevron-up').click()
         cy.clickSubmit()
     }
 
