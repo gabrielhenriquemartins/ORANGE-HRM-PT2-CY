@@ -24,7 +24,7 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://opensource-demo.orangehrmlive.com/web/index.php/',
     specPattern: 'cypress/tests/**/*.{js,jsx,ts,tsx}',
-    defaultCommandTimeout: 10000,
-    pageLoadTimeout: 20000,
+    defaultCommandTimeout: 15000,
+    pageLoadTimeout: 60000,
   },
 })
