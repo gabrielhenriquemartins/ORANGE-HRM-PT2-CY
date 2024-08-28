@@ -290,7 +290,7 @@ Cypress.Commands.add('typeIntoTextArea', (text, index = 0) => {
  */
 Cypress.Commands.add('findAndDelete', (item, state = true) => {
     cy.get('.oxd-table-card').contains(item).then(tableRow => {
-        cy.wrap(tableRow).parents('[role="row"]').find('.bi-trash').click()
+        cy.wrap(tableRow).parents('[role="row"]').find('.bi-trash').click({force: true})
     })
     if (state) {
         cy.get('button').contains(' Yes, Delete ').click()
